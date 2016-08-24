@@ -6,10 +6,8 @@ import io.vertx.rxjava.ext.web.handler.StaticHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.stereotype.Component;
 
 @Slf4j
-@Component
 class StaticServer extends AbstractVerticle {
 
     private AppConfiguration configuration;
@@ -24,7 +22,7 @@ class StaticServer extends AbstractVerticle {
         Router router = Router.router(vertx);
 
         String webroot = getRoot();
-        log.info("Using '{}' as webroot", webroot);
+        log.info("Using '{}' as static webroot", webroot);
 
         router.route().handler(StaticHandler.create(webroot));
 
