@@ -140,7 +140,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.4.0.RELEASE</version>
                 <configuration>
-                    <finalName>${build.jar.finalName}</finalName>
+                    <finalName>${project.build.finalName}</finalName>
                     <executable>true</executable>
                 </configuration>
             </plugin>
