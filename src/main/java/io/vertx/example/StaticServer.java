@@ -5,7 +5,8 @@ import io.vertx.rxjava.ext.web.Router;
 import io.vertx.rxjava.ext.web.handler.StaticHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
+
+import static java.util.Objects.requireNonNull;
 
 @Slf4j
 class StaticServer extends AbstractVerticle {
@@ -14,14 +15,14 @@ class StaticServer extends AbstractVerticle {
 
     @Autowired
     public StaticServer(AppConfiguration configuration) {
-        this.configuration = configuration;
+        this.configuration = requireNonNull(configuration);
     }
 
     @Override
     public void start() throws Exception {
         Router router = Router.router(vertx);
 
-        String webroot = getRoot();
+        String webroot = configuration.webroot();
         log.info("Using '{}' as static webroot", webroot);
 
         router.route().handler(StaticHandler.create(webroot));
@@ -29,11 +30,5 @@ class StaticServer extends AbstractVerticle {
         vertx.createHttpServer()
                 .requestHandler(router::accept)
                 .listen(configuration.httpPort());
-    }
-
-    private String getRoot() {
-        final String pathWhenInsideJarFile = "BOOT-INF/classes/webroot";
-        boolean insideJarFile = new ClassPathResource(pathWhenInsideJarFile).exists();
-        return insideJarFile ? pathWhenInsideJarFile : "webroot";
     }
 }
