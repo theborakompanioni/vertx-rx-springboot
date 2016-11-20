@@ -22,8 +22,14 @@ class StaticServer extends AbstractVerticle {
     public void start() throws Exception {
         Router router = Router.router(vertx);
 
+
         String webroot = configuration.webroot();
         log.info("Using '{}' as static webroot", webroot);
+
+        router.route().handler(RouteHandlers.loggerHandler());
+        router.route().handler(RouteHandlers.timeoutHandler());
+        router.route().handler(RouteHandlers.responseTimeHandler());
+        router.route().failureHandler(RouteHandlers.failureHandler());
 
         router.route().handler(StaticHandler.create(webroot));
 
