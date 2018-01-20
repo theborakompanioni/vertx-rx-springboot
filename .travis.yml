@@ -2,10 +2,24 @@ sudo: false
 language: java
 jdk:
   - oraclejdk8
+
+branches:
+  only:
+  - master
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-    - $HOME/.m2
-install: mvn install -DskipTests=true -Dgpg.skip=true -Dmaven.javadoc.skip=true -B -V
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+before_install:
+ - chmod +x gradlew
+
 before_script:
   - echo $HOME
-  - echo $JAVA_HOME
+
+script:
+  - ./gradlew releaseCheck clean build -Prelease.stage=SNAPSHOT -Prelease.scope=patch --refresh-dependencies --stacktrace
