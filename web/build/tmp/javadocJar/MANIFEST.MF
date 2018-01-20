@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Implementation-Title: com.github.theborakompanioni#web;0.1.0-dev.13.un
+ committed+5512c18
+Module-Origin: https://github.com/theborakompanioni/vertx-rx-springboo
+ t.git
+Build-Date: 2018-01-20_12:35:37
+Build-Id: LOCAL
+Implementation-Version: 0.1.0-dev.13.uncommitted+5512c18
+Build-Number: LOCAL
+Module-Owner: theborakompanioni+github@gmail.com
+Built-By: alei2
+Change: 5512c18
+Module-Source: /web
+Branch: master
+Built-Status: integration
+Gradle-Version: 4.3.1
+Build-Job: LOCAL
+Built-OS: Windows 10
+X-Compile-Target-JDK: 1.8
+Build-Host: ATMARCL10372
+X-Compile-Source-JDK: 1.8
+Created-By: 1.8.0_151-b12 (Oracle Corporation)
+Build-Java-Version: 1.8.0_151
+Module-Email: 
+

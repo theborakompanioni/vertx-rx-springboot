@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Build-Date: 2018-01-20_12:35:37
+Build-Number: LOCAL
+Built-By: alei2
+Specification-Title: Sample Vertx and spring-boot app
+Branch: master
+Gradle-Version: 4.3.1
+Built-OS: Windows 10
+Build-Host: ATMARCL10372
+Module-Email: 
+Implementation-Title: com.github.theborakompanioni#web;0.1.0-dev.13.un
+ committed+5512c18
+Module-Origin: https://github.com/theborakompanioni/vertx-rx-springboo
+ t.git
+Build-Id: LOCAL
+Implementation-Version: 0.1.0-dev.13.uncommitted+5512c18
+Module-Owner: theborakompanioni+github@gmail.com
+Specification-Vendor: theborakompanioni
+Change: 5512c18
+Module-Source: /web
+Implementation-Vendor: theborakompanioni
+Built-Status: integration
+Build-Job: LOCAL
+X-Compile-Target-JDK: 1.8
+X-Compile-Source-JDK: 1.8
+Specification-Version: 0.1.0-dev.13.uncommitted+5512c18
+Created-By: 1.8.0_151-b12 (Oracle Corporation)
+Build-Java-Version: 1.8.0_151
+
